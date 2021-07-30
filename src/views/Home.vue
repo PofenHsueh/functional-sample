@@ -1,6 +1,7 @@
 <template>
-  <div style="display:flex;justify-content:center">
-    <div style="width:80%">
+  <div style="display:flex;justify-content:center;flex-direction:column">
+    <Carousel :imgs="imgs"></Carousel>
+    <div>
       <calender @handlerDate="test" :handlerEvent="testforDate"></calender>
     </div>
   </div>
@@ -8,14 +9,20 @@
 
 <script>
 import calender from '@/components/Calender.vue'
-
+import Carousel from '@/components/Carousel.vue'
 export default {
   components: {
-    calender
+    calender,
+    Carousel
   },
   data(){
     return{
-    event:[{name: '休假', start: '2021-07-26'},{name: '25 Birthday', start: '2021-07-27'},{name: '發薪日', start: '2021-08-05'}],  
+    event:[{name: '休假', start: '2021-07-26'},{name: '25 Birthday', start: '2021-07-27'},{name: '發薪日', start: '2021-08-05'}], 
+    imgs:[
+        { src:require("@/assets/images/a1.jpg") },
+        { src:require("@/assets/images/a2.jpg") },
+        { src:require("@/assets/images/a3.jpg") },
+      ] 
     }
   },
   methods:{

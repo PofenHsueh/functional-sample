@@ -1,30 +1,30 @@
 <template>
-<div >
+<div style="width:100%">
   <transition-group tag="div" class="container" :name="transitionName">
-    <div class="page" v-for="(img,index) in imgs" :key="img.src" v-show ="index === show">
+    <div class="page" v-for="(img,index) in imgs" :key="index" v-show ="index === show">
       <img :src="img.src" />
     </div>
   </transition-group>
   <button @click="show-=1"><i class="fas fa-long-arrow-alt-left"></i></button>
   <span>
-    <button v-for="(num,index) in imgs.length" :key="index" @click="setShow(num-1)">{{num}}</button>
+    <button v-for="(num,index) in imgs.length" :key="index" @click="show-=num">{{num}}</button>
   </span>
   <button @click="show+=1"><i class="fas fa-long-arrow-alt-right"></i></button>
 </div>
 </template>
 <script>
 export default {
+  props:{
+    imgs:{
+      type:Array
+    }
+  },
   data(){
     return{
       timer:'',
       interval:5000,
       transitionName:'left-in',
       show:0,
-      imgs:[
-        { src:require("@/assets/images/a1.jpg") },
-        { src:require("@/assets/images/a2.jpg") },
-        { src:require("@/assets/images/a3.jpg") }
-      ]
     }
   },
   watch:{
@@ -101,5 +101,10 @@ export default {
 button {
   border: none;
   background: #fff;
+  font-size: 14px;
 }
+button:hover{
+  color: #F9BE44;
+}
+
 </style>
