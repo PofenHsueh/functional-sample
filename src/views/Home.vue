@@ -17,7 +17,7 @@ export default {
   },
   data(){
     return{
-    event:[{name: '休假', start: '2021-07-26'},{name: '25 Birthday', start: '2021-07-27'},{name: '發薪日', start: '2021-08-05'}], 
+    event:[{name: '休假', start: '2021-07-26'},{name: '25 Birthday', start: '2021-07-27'},{name: '下大雨', start: '2021-08-02'},{name: '發薪日', start: '2021-08-05'}], 
     imgs:[
         { src:require("@/assets/images/a1.jpg") },
         { src:require("@/assets/images/a2.jpg") },

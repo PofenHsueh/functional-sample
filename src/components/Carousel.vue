@@ -1,7 +1,7 @@
 <template>
 <div style="width:100%">
   <transition-group tag="div" class="container" :name="transitionName">
-    <div class="page" v-for="(img,index) in imgs" :key="index" v-show ="index === show">
+    <div class="page" v-for="(img,index) in imgs" :key="img.src" v-show ="index === show">
       <img :src="img.src" />
     </div>
   </transition-group>
@@ -49,6 +49,9 @@ export default {
   },
   mounted(){
     this.timer = setInterval(this.nextShow,this.interval)
+  },
+  destroyed(){
+     clearTimeout(this.timer)
   }
 }
 </script>
