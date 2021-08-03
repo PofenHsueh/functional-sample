@@ -1,6 +1,6 @@
 <template>
-  <div>tree view
-      <MenuList :item="list"></MenuList>
+  <div>
+      <MenuList :item="list" v-for="(list,idx) in menuList" :key="idx"></MenuList>
   </div>
 </template>
 <script>
@@ -11,8 +11,8 @@ export default {
   },
   data(){
     return{
-      list:{
-        label:"24小時標籤（2065）",
+      menuList:[{
+        label:"24小時標籤",
         children:[
           {
             label:"電玩遊戲",
@@ -29,7 +29,7 @@ export default {
             label:"積木桌遊",
             children:[
               {
-                label:"撲克牌"
+                label:"撲克牌",
               },
               {
                 label:"德國HABA桌遊"
@@ -37,7 +37,23 @@ export default {
             ]
           }
         ]
-      }
+      },
+      {
+        label:"8小時標籤",
+        children:[
+          {
+            label:"遊戲",
+            children:[
+              {
+                label:"switch2"
+              },
+              {
+                label:"ps42"
+              }
+            ]
+          }
+        ]
+      }]
     }
   }
 }

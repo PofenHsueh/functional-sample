@@ -8,6 +8,7 @@
       </button>
       <h1 style="margin: 0px 20px">
         {{ calenderDate.year }}年 {{ calenderDate.month + 1 }} 月
+        <i class="fas fa-camera-retro"></i>
       </h1>
       <button @click="adjustMonth(1)">
         <i class="fas fa-angle-right"></i>

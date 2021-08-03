@@ -2,7 +2,7 @@
 <ul>
   <li>
     <span v-if="hasChildren" @click="toggleOpen">{{opened ? "-" : "+" }}</span>
-    <a>{{item.label}}</a>
+    <a @click="toggleOpen(item.label)">{{item.label}}</a>
     <ul v-show="hasChildren && opened">
        <MenuList v-for="(child,idx) in item.children" :key="idx" :item="child"/>
     </ul>
@@ -29,11 +29,20 @@ export default {
     }
   },
   methods:{
-    toggleOpen(){
+    toggleOpen(label){
       if(this.hasChildren){
-        this.opened=!this.opened
+        this.opened =!this.opened
+        console.log(label)
       }
     }
   }
 }
 </script>
+<style scoped>
+ul{
+  list-style: none;
+  text-align: left;
+  padding-left: 20px;
+  color:lightslategray;
+}
+</style>
